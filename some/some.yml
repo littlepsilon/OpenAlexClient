@@ -1,0 +1,431 @@
+filter:
+  works:
+    name: Parameter Works
+    filter_parameters:
+      authorships.author.id:
+        description: Authors for a work (OpenAlex ID)
+        value: String
+        example: https://openalex.org/A5085171399
+      authorships.author.orcid:
+        description: Authors for a work (ORCID)
+        value: String
+        example: https://orcid.org/0000-0002-9344-7439
+      authorships.countries:
+        description: The country or countries for this author.
+        value: String
+        example: US
+      # The institutional affiliations this author claimed in the context of this work
+      authorships.institutions.country_code:
+        description: The country or countries for this institutions.
+        value: String
+        example: CA
+      authorships.institutions.id:
+        description: Institutions affiliated with the authors of a work (OpenAlex ID)
+        value: String
+        example: https://openalex.org/I18014758
+      authorships.institutions.lineage:
+        description: Lineage for this institutions.
+        value: List[String]
+        example: 
+          - "https://openalex.org/I18014758"
+      authorships.institutions.ror:
+        description: Institutions affiliated with the authors of a work (ROR ID)
+        value: String
+        example: https://ror.org/0213rcc28
+      authorships.institutions.type:
+        description: Institutions type
+        value: String
+        example: education
+      authorships.is_corresponding:
+        description: This filter marks whether or not we have corresponding author information for a given work
+        value: Boolean
+        example: true
+      # Object: Information about this work's APC (article processing charge)
+      apc_list.value:
+        description: The APC list price
+        value: Integer
+        example: 3200
+      apc_list.currency:
+        description: The APC list currency
+        value: String
+        example: USD
+      apc_list.provenance:
+        description: The APC list provenance
+        value: String
+        example: doaj
+      apc_list.value_usd:
+        description: The APC list price in USD
+        value: Integer
+        example: 3200
+      #  Information about the paid APC
+      apc_paid.value:
+        description: The paid price of APC list
+        value: Integer
+        example: 2250
+      apc_paid.currency:
+        description: The paid currency of APC list
+        value: String
+        example: EUR
+      apc_paid.provenance:
+        description: The paid provenance
+        value: String
+        example: openapc
+      apc_paid.value_usd:
+        description: The paid value in USD
+        value: Integer
+        example: 2426
+      # A Location object with the best available open access location for this work
+      best_oa_location.is_accepted:
+        description: null
+        value: null
+        example: null
+      best_oa_location.is_published:
+        description: null
+        value: null
+        example: null
+      best_oa_location.license:
+        description: null
+        value: null
+        example: null
+      best_oa_location.source.id:
+        description: null
+        value: null
+        example: null
+      best_oa_location.source.is_in_doaj:
+        description: null
+        value: null
+        example: null
+      best_oa_location.source.issn:
+        description: null
+        value: null
+        example: null
+      best_oa_location.source.host_organization:
+        description: null
+        value: null
+        example: null
+      best_oa_location.source.type:
+        description: null
+        value: null
+        example: null
+      best_oa_location.version:
+        description: null
+        value: null
+        example: null
+      cited_by_count:
+        description: The number of citations to this work
+        value: Integer
+        example: 382
+      #The concepts associated with a work
+      concepts.id:
+        description: concept id
+        value: String
+        example: https://openalex.org/C71924100
+      concepts.wikidata:
+        description: wikidata id
+        value: String
+        example: https://www.wikidata.org/wiki/Q1119
+      corresponding_author_ids:
+        description: OpenAlex IDs of any authors 
+        value: List[String]
+        example: 
+          - https://openalex.org/A2109306456
+      corresponding_institution_ids:
+        description: OpenAlex IDs of any institutions found within an authorship
+        value: List[String]
+        example:
+          - https://openalex.org/I4210123613
+      countries_distinct_count:
+        description: Number of distinct country_codes among the authorships for this work
+        value: Integer
+        example: 4
+      doi:
+        description: DOI (Digital Object Identifier) of a work
+        value: String
+        example: https://doi.org/10.7717/peerj.4375
+      # List of grant objects, which include the Funder and the award ID, if available. Our grants data comes from Crossref, and is currently fairly limited.
+      grants.award_id:
+        description: Award IDs for grants
+        value: String
+        example: ABI 1661218
+      grants.funder:
+        description: Funding organizations linked to grants for a work
+        value: String
+        example: https://openalex.org/F4320306076
+      # All the external identifiers that we know about for this work.
+      ids.pmcid:
+        description: The Pubmed Cnetral Identifier
+        value: String
+        example: https://pubmed.ncbi.nlm.nih.gov/29456894
+      ids.pmid:
+        description: The Pubmed Identifier
+        value: String
+        example: https://pubmed.ncbi.nlm.nih.gov/29456894
+      ids.openalex:
+        description: The OpenAlex ID for work
+        value: String
+        example: https://openalex.org/W2741809807
+      ids.mag:
+        description: Microsoft Academic Graph ID
+        value: Integer
+        example: 2741809807
+      institutions_distinct_count:
+        description: Number of distinct institution among the authorships
+        value: Integer
+        example: 4
+      is_paratext:
+        description: True if we think this work is paratext
+        value: Boolean
+        example: true
+      is_retracted:
+        description: True if we know this work has been retracted
+        value: Boolean
+        example: true
+      language:
+        description: Language
+        value: String
+        example: en
+      # A list of Location objects describing all unique places where this work lives.
+      locations.is_accepted:
+        description: null
+        value: null
+        example: null
+      locations.is_oa:
+        description: null
+        value: null
+        example: null
+      locations.is_published:
+        description: null
+        value: null
+        example: null
+      locations.license:
+        description: null
+        value: null
+        example: null
+      locations.source.id:
+        description: null
+        value: null
+        example: null
+      locations.source.is_in_doaj:
+        description: null
+        value: null
+        example: null
+      locations.source.issn:
+        description: null
+        value: null
+        example: null
+      locations.source.host_organization:
+        description: null
+        value: null
+        example: null
+      locations.source.type:
+        description: null
+        value: null
+        example: null
+      locations.version:
+        description: null
+        value: null
+        example: null
+      locations_count:
+        description: null
+        value: null
+        example: null
+      open_access.any_repository_has_fulltext:
+        description: null
+        value: null
+        example: null
+      open_access.is_oa :
+        description: Whether a work is Open Access
+        value: Boolean
+        example: true
+      open_access.oa_status:
+        description: null
+        value: null
+        example: null
+      primary_location.is_accepted:
+        description: null
+        value: null
+        example: null
+      primary_location.is_oa:
+        description: null
+        value: null
+        example: null
+      primary_location.is_published:
+        description: null
+        value: null
+        example: null
+      primary_location.license:
+        description: null
+        value: null
+        example: null
+      primary_location.source.id:
+        description: null
+        value: null
+        example: null
+      primary_location.source.is_in_doaj:
+        description: null
+        value: null
+        example: null
+      primary_location.source.issn:
+        description: null
+        value: null
+        example: null
+      primary_location.source.host_organization:
+        description: null
+        value: null
+        example: null
+      primary_location.source.type:
+        description: null
+        value: null
+        example: null
+      primary_location.version:
+        description: null
+        value: null
+        example: null
+      publication_year:
+        description: null
+        value: null
+        example: null
+      publication_date:
+        description: null
+        value: null
+        example: null
+      sustainable_development_goals.id:
+        description: null
+        value: null
+        example: null
+      type:
+        description: null
+        value: null
+        example: null
+      type_crossref:
+        description: null
+        value: null
+        example: null
+      #Convinent filter
+      abstract.search:
+        description: Search for abstract
+        value: String
+        example: artificial&intelligence
+      authors_count:
+        description: Number of Authors
+        value: Integer
+        example: 1
+      authorships.institutions.continent:
+        description: Continent
+        value: String
+        example: europe
+
+      cited_by:
+        description: the OpenAlex ID for a given work
+        value: String
+        example: https://api.openalex.org/works?filter=cited_by:W2766808518
+      cites:
+        description: the OpenAlex ID for a given work
+        value: String
+        example: https://api.openalex.org/works?filter=cites:W2766808518
+
+      concepts_count:
+        description: null
+        value: null
+        example: null
+      default.search:
+        description: null
+        value: null
+        example: null
+      display_name.search:
+        description: null
+        value: null
+        example: null
+
+      from_created_date:
+        description: created date
+        value: String
+        example: yyyy-mm-dd
+      from_publication_date:
+        description: publication date
+        value: String
+        example: yyyy-mm-dd
+      from_updated_date:
+        description: updated date
+        value: String
+        example: yyyy-mm-dd
+      fulltext.search:
+        description: null
+        value: null
+        example: null
+      has_abstract:
+        description: null
+        value: null
+        example: null
+      has_doi:
+        description: null
+        value: null
+        example: null
+      has_oa_accepted_or_published_version:
+        description: null
+        value: null
+        example: null
+      has_oa_submitted_version:
+        description: null
+        value: null
+        example: null
+      has_orcid:
+        description: null
+        value: null
+        example: null
+      has_pmcid:
+        description: null
+        value: null
+        example: null
+      has_pmid:
+        description: null
+        value: null
+        example: null
+      has_ngrams:
+        description: null
+        value: null
+        example: null
+      has_reference:
+        description: null
+        value: null
+        example: null
+      journal:
+        description: null
+        value: null
+        example: null
+      locations.source.host_institution_lineage:
+        description: null
+        value: null
+        example: null
+      locations.source.publisher_lineage:
+        description: null
+        value: null
+        example: null
+      primary_location.source.has_issn:
+        description: null
+        value: null
+        example: null
+      primary_location.source.publisher_lineage:
+        description: null
+        value: null
+        example: null
+      raw_affiliation_string.search:
+        description: null
+        value: null
+        example: null
+      related_to:
+        description: null
+        value: null
+        example: null
+      repository:
+        description: null
+        value: null
+        example: null
+      to_publication_date:
+        description: null
+        value: null
+        example: null
+      version:
+        description: null
+        value: null
+        example: null
